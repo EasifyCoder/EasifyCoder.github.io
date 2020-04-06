@@ -1,11 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>我的第一篇文章</title>
-    <url>/2020/04/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>#第一章</p>
-<p>#第二章</p>
+    <title>1 学会Linux的基本安装与配置</title>
+    <url>/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。</p>
+<p>绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特别高的同学是一个福音。</p>
+<p>要想使用虚拟化技术，我们要先来安装虚拟机软件：VirtualBox</p>
+<p>VirtualBox的官方网站是：<a href="https://link.zhihu.com/?target=https%3A//www.virtualbox.org/">https://www.virtualbox.org</a></p>
+<p><img src="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg" alt="img"></p>
+<p>进入官网后，大大的download字样显示在眼前，生怕你看不到，点击download后，自行选择相应的操作系统平台进行下载。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-ba017b344b6d1dbde56d7c623e948ecf_1440w.jpg" alt="img"></p>
+<p>安装VirtualBox和安装微信一样简单，大家可以自行安装。</p>
+<p>我所使用的是macOS操作系统下的VirtualBox，界面如下：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-16e5bf3e9697cbe6230606919cde22d6_1440w.jpg" alt="img"></p>
+<p>点击新建，输入名称，版本选择Ubuntu。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-02d13ccc35a1f2da29ee12f5f23affce_1440w.jpg" alt="img"></p>
+<p>点击继续，进入“内存大小”的设置界面，如下，使用默认的1024M虚拟机内存：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-d7b988e8df86f9bb3af6ebf8ea075cdb_1440w.jpg" alt="img"></p>
+<p>进入“虚拟硬盘”设置界面，勾选“现在创建虚拟硬盘”，点击下一步：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-0dd71d5441113c90f49231ff73b52f4c_1440w.jpg" alt="img"></p>
+<p>默认选择VDI，</p>
+<p><img src="https://pic2.zhimg.com/80/v2-d1d7cab5a12ec2f2f03d124af718e8a9_1440w.jpg" alt="img"></p>
+<p>作为学习用途，磁盘大小一般设置10GB足够了，如下：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-d2f26e9750a6e063b3d5281451aa8e43_1440w.jpg" alt="img"></p>
+<p>点击创建，会自动回到主界面，并多了一个虚拟机：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-6daa3bb2dca151fcf0b3767aca141854_1440w.jpg" alt="img"></p>
+<p>下面，我来演示在虚拟机中安装Ubuntu操作系统</p>
+<p>Ubuntu官网下载地址：<a href="https://link.zhihu.com/?target=https%3A//www.ubuntu.com/download/desktop">Download Ubuntu Desktop | Download | Ubuntu</a></p>
+<p>进入官网后，点击download，我们下载最新的Ubuntu的LTS版，</p>
+<p><img src="https://pic4.zhimg.com/80/v2-3886b0d43fad0bcd71006c5de2758b53_1440w.jpg" alt="img"></p>
+<p>点击download后，会自动进行安装包的下载，稍等片刻。</p>
+<p>下载完成后，回到虚拟机，右击刚创建的虚拟机，点击设置</p>
+<p><img src="https://pic1.zhimg.com/80/v2-acaa21b8afe70db73df70ba68a9c3788_1440w.jpg" alt="img"></p>
+<p>点击右边的小光盘，选择刚下载的iso文件，即可。</p>
+<p>回到主界面后，点击虚拟机并启动。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-4f55ee176df3e720e3423eb51cb25fd0_1440w.jpg" alt="img"></p>
+<p>安装界面步骤如下：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-762241ae7e051680621646d973df456c_1440w.jpg" alt="img"></p>
+<p>选择英语界面：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-30c7021a2201e573fbafec0610f1bfac_1440w.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-cce3432f4e2b8425dc8e4ddbfe2e9720_1440w.jpg" alt="img"></p>
+<p>这是关于更新和应用程序的。默认选中normal installation，会自动安装常用的游戏和应用软件，继续Continue，进入下一步。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8614ce30cb70873f9ea6957db000d6b3_1440w.jpg" alt="img"></p>
+<p>进入用户信息，用户名和密码的设定界面：</p>
+<p>慢慢等待安装即可。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-e89ba6c422bde1c906c3a13f720574f1_1440w.jpg" alt="img"></p>
+<p>安装完成后，进入到我们的欢迎界面：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-91d45bd5a518270ec15cb57618a2664d_1440w.jpg" alt="img"></p>
+<p>点击next，</p>
+<p><img src="https://pic2.zhimg.com/80/v2-bbcd120a5280b563cd41431b9f4e0f4d_1440w.jpg" alt="img"></p>
+<p>这个界面中，意思是“你是否愿意发送信息到官方”，也即为开发者提供信息以帮助他们完善系统，我们选择“No”，点击next</p>
+<p><strong>对虚拟机进行一些初始配置：</strong></p>
+<p><strong>1.安装增强功能</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-02d8d0825f07c6b6d1274a2a3d50b2f3_1440w.jpg" alt="img"></p>
+<p>点击Insert Guest Additions CD image，安装增强功能：</p>
+<p>弹出一个弹窗，点击run即可：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-e9b7a529ffeef8f4c45484086d75af1b_1440w.jpg" alt="img"></p>
+<p>会要求输入密码。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-54bcebe7f674aa1169b60dcde4208571_1440w.jpg" alt="img"></p>
+<p>输入密码后，很快完成安装，按Return键关闭窗口</p>
+<p><img src="https://pic2.zhimg.com/80/v2-f73d31543feda420e1c3634d7fbb6135_1440w.jpg" alt="img"></p>
+<p>可以看到，安装增强功能后，系统界面的分辨率上升了一个台阶。</p>
+<p><strong>共享剪贴板</strong></p>
+<p><img src="https://pic3.zhimg.com/80/v2-1e9ed6a1ca747ab2b49524e6a64c1c2e_1440w.jpg" alt="img"></p>
+<p>点击Devices的Shared Clipboard，改为Bidirectional（双向的），这样我们就能在宿主机和虚拟机之间使用剪贴板双向拷贝内容了。</p>
+<p><strong>到这里，基本的Ubuntu安装和基本配置就告一段落了，后续的文章会继续带领大家玩转Linux，探索更多的强大的Linux功能。</strong></p>
 ]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>运维</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
