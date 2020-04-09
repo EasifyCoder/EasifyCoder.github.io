@@ -91,7 +91,7 @@
 
 
 
-  <meta name="keywords" content="Linux,运维," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -102,44 +102,17 @@
 
 
 
-<meta name="description" content="Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。 绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特">
+<meta name="description" content="mongodb数据库在实际生产环境中，大多数基于多服务器集群运行，并进行相应的数据分布式处理。因此，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1 学会Linux的基本安装与配置">
-<meta property="og:url" content="http://yoursite.com/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="浅谈MongoDB的复制">
+<meta property="og:url" content="http://yoursite.com/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/index.html">
 <meta property="og:site_name" content="老陈秀的博客">
-<meta property="og:description" content="Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。 绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特">
+<meta property="og:description" content="mongodb数据库在实际生产环境中，大多数基于多服务器集群运行，并进行相应的数据分布式处理。因此，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ba017b344b6d1dbde56d7c623e948ecf_1440w.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hc6ce37696b144750810932fef2bba5e1a.png">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hb62f17d85b514d16819413477f6fa4978.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d7b988e8df86f9bb3af6ebf8ea075cdb_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-0dd71d5441113c90f49231ff73b52f4c_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-d1d7cab5a12ec2f2f03d124af718e8a9_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d2f26e9750a6e063b3d5281451aa8e43_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-6daa3bb2dca151fcf0b3767aca141854_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-3886b0d43fad0bcd71006c5de2758b53_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-acaa21b8afe70db73df70ba68a9c3788_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-4f55ee176df3e720e3423eb51cb25fd0_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-762241ae7e051680621646d973df456c_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-30c7021a2201e573fbafec0610f1bfac_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-cce3432f4e2b8425dc8e4ddbfe2e9720_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-8614ce30cb70873f9ea6957db000d6b3_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-e89ba6c422bde1c906c3a13f720574f1_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-91d45bd5a518270ec15cb57618a2664d_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-bbcd120a5280b563cd41431b9f4e0f4d_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-02d8d0825f07c6b6d1274a2a3d50b2f3_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-e9b7a529ffeef8f4c45484086d75af1b_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-54bcebe7f674aa1169b60dcde4208571_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-f73d31543feda420e1c3634d7fbb6135_1440w.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hba96da720c2b476ea801db7c21248b4dW.png">
-<meta property="article:published_time" content="2020-04-06T05:11:25.000Z">
-<meta property="article:modified_time" content="2020-04-06T08:06:23.621Z">
+<meta property="article:published_time" content="2020-04-08T02:48:47.152Z">
+<meta property="article:modified_time" content="2020-04-08T02:50:42.944Z">
 <meta property="article:author" content="陈佐明">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="运维">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg">
 
 
 
@@ -169,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/06/1 学会Linux的基本安装与配置/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/08/浅谈MongoDB的复制/"/>
 
 
 
 
 
-  <title>1 学会Linux的基本安装与配置 | 老陈秀的博客</title>
+  <title>浅谈MongoDB的复制 | 老陈秀的博客</title>
   
 
 
@@ -322,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈佐明">
@@ -339,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">1 学会Linux的基本安装与配置</h1>
+          <h1 class="post-title" itemprop="name headline">浅谈MongoDB的复制</h1>
         
 
         <div class="post-meta">
@@ -351,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-06T13:11:25+08:00">
-                2020-04-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T10:48:47+08:00">
+                2020-04-08
               </time>
             
 
@@ -370,8 +343,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+                <a href="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,68 +396,7 @@
       
 
       
-        <p>Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。</p>
-<p>绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特别高的同学是一个福音。</p>
-<p>要想使用虚拟化技术，我们要先来安装虚拟机软件：VirtualBox</p>
-<p>VirtualBox的官方网站是：<a href="https://link.zhihu.com/?target=https%3A//www.virtualbox.org/">https://www.virtualbox.org</a></p>
-<p><img src="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg" alt="img"></p>
-<p>进入官网后，大大的download字样显示在眼前，生怕你看不到，点击download后，自行选择相应的操作系统平台进行下载。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-ba017b344b6d1dbde56d7c623e948ecf_1440w.jpg" alt="img"></p>
-<p>安装VirtualBox和安装微信一样简单，大家可以自行安装。</p>
-<p>我所使用的是macOS操作系统下的VirtualBox，界面如下：</p>
-<p><img src="https://ae01.alicdn.com/kf/Hc6ce37696b144750810932fef2bba5e1a.png" alt="img"></p>
-<p>点击新建，输入名称，版本选择Ubuntu。</p>
-<p><img src="https://ae01.alicdn.com/kf/Hb62f17d85b514d16819413477f6fa4978.png" alt="img"></p>
-<p>点击继续，进入“内存大小”的设置界面，如下，使用默认的1024M虚拟机内存：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-d7b988e8df86f9bb3af6ebf8ea075cdb_1440w.jpg" alt="img"></p>
-<p>进入“虚拟硬盘”设置界面，勾选“现在创建虚拟硬盘”，点击下一步：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-0dd71d5441113c90f49231ff73b52f4c_1440w.jpg" alt="img"></p>
-<p>默认选择VDI，</p>
-<p><img src="https://pic2.zhimg.com/80/v2-d1d7cab5a12ec2f2f03d124af718e8a9_1440w.jpg" alt="img"></p>
-<p>作为学习用途，磁盘大小一般设置10GB足够了，如下：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-d2f26e9750a6e063b3d5281451aa8e43_1440w.jpg" alt="img"></p>
-<p>点击创建，会自动回到主界面，并多了一个虚拟机：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-6daa3bb2dca151fcf0b3767aca141854_1440w.jpg" alt="img"></p>
-<p>下面，我来演示在虚拟机中安装Ubuntu操作系统</p>
-<p>Ubuntu官网下载地址：<a href="https://link.zhihu.com/?target=https%3A//www.ubuntu.com/download/desktop">Download Ubuntu Desktop | Download | Ubuntu</a></p>
-<p>进入官网后，点击download，我们下载最新的Ubuntu的LTS版，</p>
-<p><img src="https://pic4.zhimg.com/80/v2-3886b0d43fad0bcd71006c5de2758b53_1440w.jpg" alt="img"></p>
-<p>点击download后，会自动进行安装包的下载，稍等片刻。</p>
-<p>下载完成后，回到虚拟机，右击刚创建的虚拟机，点击设置</p>
-<p><img src="https://pic1.zhimg.com/80/v2-acaa21b8afe70db73df70ba68a9c3788_1440w.jpg" alt="img"></p>
-<p>点击右边的小光盘，选择刚下载的iso文件，即可。</p>
-<p>回到主界面后，点击虚拟机并启动。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-4f55ee176df3e720e3423eb51cb25fd0_1440w.jpg" alt="img"></p>
-<p>安装界面步骤如下：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-762241ae7e051680621646d973df456c_1440w.jpg" alt="img"></p>
-<p>选择英语界面：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-30c7021a2201e573fbafec0610f1bfac_1440w.jpg" alt="img"></p>
-<p><img src="https://pic1.zhimg.com/80/v2-cce3432f4e2b8425dc8e4ddbfe2e9720_1440w.jpg" alt="img"></p>
-<p>这是关于更新和应用程序的。默认选中normal installation，会自动安装常用的游戏和应用软件，继续Continue，进入下一步。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-8614ce30cb70873f9ea6957db000d6b3_1440w.jpg" alt="img"></p>
-<p>进入用户信息，用户名和密码的设定界面：</p>
-<p>慢慢等待安装即可。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-e89ba6c422bde1c906c3a13f720574f1_1440w.jpg" alt="img"></p>
-<p>安装完成后，进入到我们的欢迎界面：</p>
-<p><img src="https://pic2.zhimg.com/80/v2-91d45bd5a518270ec15cb57618a2664d_1440w.jpg" alt="img"></p>
-<p>点击next，</p>
-<p><img src="https://pic2.zhimg.com/80/v2-bbcd120a5280b563cd41431b9f4e0f4d_1440w.jpg" alt="img"></p>
-<p>这个界面中，意思是“你是否愿意发送信息到官方”，也即为开发者提供信息以帮助他们完善系统，我们选择“No”，点击next</p>
-<p><strong>对虚拟机进行一些初始配置：</strong></p>
-<p><strong>1.安装增强功能</strong></p>
-<p><img src="https://pic4.zhimg.com/80/v2-02d8d0825f07c6b6d1274a2a3d50b2f3_1440w.jpg" alt="img"></p>
-<p>点击Insert Guest Additions CD image，安装增强功能：</p>
-<p>弹出一个弹窗，点击run即可：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-e9b7a529ffeef8f4c45484086d75af1b_1440w.jpg" alt="img"></p>
-<p>会要求输入密码。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-54bcebe7f674aa1169b60dcde4208571_1440w.jpg" alt="img"></p>
-<p>输入密码后，很快完成安装，按Return键关闭窗口</p>
-<p><img src="https://pic2.zhimg.com/80/v2-f73d31543feda420e1c3634d7fbb6135_1440w.jpg" alt="img"></p>
-<p>可以看到，安装增强功能后，系统界面的分辨率上升了一个台阶。</p>
-<p><strong>共享剪贴板</strong></p>
-<p><img src="https://ae01.alicdn.com/kf/Hba96da720c2b476ea801db7c21248b4dW.png" alt="img"></p>
-<p>点击Devices的Shared Clipboard，改为Bidirectional（双向的），这样我们就能在宿主机和虚拟机之间使用剪贴板双向拷贝内容了。</p>
-<p><strong>到这里，基本的Ubuntu安装和基本配置就告一段落了，后续的文章会继续带领大家玩转Linux，探索更多的强大的Linux功能。</strong></p>
+        <p>mongodb数据库在实际生产环境中，大多数基于多服务器集群运行，并进行相应的数据分布式处理。因此，</p>
 
       
     </div>
@@ -500,14 +412,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag"># 运维</a>
-          
-        </div>
-      
 
       
       
@@ -517,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/02/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/" rel="next" title="5 用户权限与群组管理">
+                <i class="fa fa-chevron-left"></i> 5 用户权限与群组管理
               </a>
             
           </div>
@@ -526,10 +430,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/07/2%20Linux%E7%BB%88%E7%AB%AF%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="prev" title="2 Linux终端与命令行">
-                2 Linux终端与命令行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -968,13 +868,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = '1 学会Linux的基本安装与配置'.length > 0
+      var isPost = '浅谈MongoDB的复制'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '1 学会Linux的基本安装与配置'
+        var title = '浅谈MongoDB的复制'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

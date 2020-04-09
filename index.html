@@ -5,14 +5,37 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh_CN">
+<html class="theme-next pisces use-motion" lang="zh_CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://easifycoder.github.io"); // 这里替换成              } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
 
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "80e5a7a1"
+    });
+  daovoice('update');
+  </script>
 
 
 
@@ -95,7 +118,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -238,26 +261,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            Sitemap
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            Commonweal 404
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -277,6 +280,909 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/" itemprop="url">浅谈MongoDB的复制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T10:48:47+08:00">
+                2020-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>mongodb数据库在实际生产环境中，大多数基于多服务器集群运行，并进行相应的数据分布式处理。因此，</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/" itemprop="url">5 用户权限与群组管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T08:35:25+08:00">
+                2020-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>这一小节，我们来聊聊用户权限与群组管理的相关知识。前面的几节课我们讲解了命令行，文件系统，文件和目录，等等。这些都是Linux学习的重中之重，也是基础之基础。</strong></p>
+<p><strong>要知道的是，Linux是一个多用户的系统，我们不仅可以在root用户下行使所有权限，也可以实现多人同时不同地点地登陆同一个Linux系统，每个人可以设定不同的权限，通过设定不同的权限，可以限定每个人能做什么，不能做什么，而设置这些权限的当权者，就是root。</strong></p>
+<p><strong>在正式开始本小节的内容前，请双击屏幕给老陈秀一个鼓励吧（暗示双击点赞）</strong></p>
+<p><strong>这篇文章你将学到：</strong></p>
+<p><strong>1.用户权限</strong></p>
+<p><strong>2.群组管理命令的使用</strong></p>
+<p>因为Linux具有多用户的功能，所以管理者要对使用者的权限进行严格的管理，以防止出现居心叵测的用户恶意破坏Linux的文件系统。</p>
+<p>在讲解用户权限之前，我们先来介绍一下群组管理。群组管理是一个群组聚集的概念。举个现实当中的例子，每个人都会有自己的同学，朋友，家人。即可以分为3个群组，分别为classmates，friends，family。对于我来说，我的用户名为john，则john会同时属于3个群组。</p>
+<p>下面进入实操环节：</p>
+<p><img src="https://ae01.alicdn.com/kf/Hb62fdc6fda664293ae864ad87ca47d3bs.png" alt="img"></p>
+<p>可以看到的是在最后一行中出现一个#号，代表着当前为root用户，拥有着至高无上的权利。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3ef4d6b0a33d58dd60c66f28588f73c1_1440w.png" alt="img"></p>
+<p>输入groups，按下回车，可以发现已经有了很多的群组。</p>
+<h2 id="1-用户管理的命令"><a href="#1-用户管理的命令" class="headerlink" title="1.用户管理的命令"></a><strong>1.用户管理的命令</strong></h2><p>下面我会带领大家创建3个群组和一个用户john。</p>
+<p><strong>adduser命令：添加新用户</strong></p>
+<p>顾名思义，adduser命令用于添加新用户。用法也极为简单，在adduser后面接上要创建的用户名。</p>
+<p><strong>创建3个群组：classmates，friends，family</strong></p>
+<p>添加群组，我们使用addgroup命令，如下：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-416c640455c637183073704c27e978f3_1440w.jpg" alt="img"></p>
+<p>addgroup后面跟上群组名称classmates，发现弹出提示：<strong>只有root用户可以添加用户或群组</strong></p>
+<p>我们如何成为root用户呢？可以通过两种方法：</p>
+<p>1.临时获得root用户的权限</p>
+<p>想要临时获得root用户的权限，只需要在命令的前面加上sudo即可，如下：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-c12c496282488c6877d9ddbc52e20400_1440w.jpg" alt="img"></p>
+<p>可以看到输出了Done，就是成功了的意思。</p>
+<p>2.永久获得root用户的权限（进入root用户）</p>
+<p>先执行sudo su，进入root用户，如下：</p>
+<p><img src="https://ae01.alicdn.com/kf/H5470e549af37475e8631483e84cbbbban.png" alt="img"></p>
+<p>字符变为#号，说明当前为root用户。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-7f6c7db99bd26681b24d913e5a93add4_1440w.jpg" alt="img"></p>
+<p>上图完成了群组的创建，很好。不过目前这个群组还是空的，我们还没有往里面添加用户。下面将用户john添加到群组classmates中，如下：</p>
+<p>我们使用<strong>usermod命令</strong>修改用户账号，usermod可以理解为user + modify ，意为“修改用户”的意思，需要对其指定参数-g来修改用户所在的群组，用法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -g classmates john</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic4.zhimg.com/80/v2-1a01f849026e7fc444e8617b939640c3_1440w.jpg" alt="img"></p>
+<p>对于groups命令，只需在groups后面接上用户名，即可了解其所在的群组。</p>
+<p>我们再创建两个群组，如下：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-89c9860dd50c55fa0cfb28afe9aef661_1440w.jpg" alt="img"></p>
+<p>我们将用户john同时添加到三个群组中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G classmates,friends,family john</span><br></pre></td></tr></table></figure>
+
+<p>相比于 -g， -G命令可以同时将一个用户添加到多个群组。</p>
+<p>以上命令将用户john同时添加到三个群组中，群组间使用逗号隔开。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-2c2734f7e8f6373fc0a344fdc2fbf8d0_1440w.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">再我们在使用usermod的时候，需要注意一点：-g参数和-G参数都有修改群组的作用，但是，它们会把用户先从</span><br><span class="line">原来的群组中去除掉，再加入到新的群组。如果你不想离开原先的群组，而又希望加入新的群组，则可以这样做：</span><br><span class="line">在-G的基础上加上-a参数，表示“追加群组”的意思，如下：</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic1.zhimg.com/80/v2-f8183fcbc8a44d4fd1f4703a48aeb6fc_1440w.png" alt="img"></p>
+<p>以上命令将用户john追加到群组people中，这样的话，john则属于四个群组了。</p>
+<p><strong>delgroup命令：删除群组</strong></p>
+<p>delgroup命令用于删除群组，用法也十分的简单，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delgroup classmates</span><br></pre></td></tr></table></figure>
+
+<p>这样，我们就删除了classmates的群组了。</p>
+<p><strong>小结：</strong></p>
+<p><strong>1.adduser命令用于添加用户</strong></p>
+<p><strong>2.命令前+ sudo 获取管理权限</strong></p>
+<p><strong>3.groups 【user】 groups后接用户名，显示用户所在的群组</strong></p>
+<p><strong>4.delgroup 【group】 用于删除群组</strong></p>
+<p><strong>5.usermod -G -a 【group】【user】 修改用户所在群组，-a参数用于追加群组</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/4%20CentOS%E4%B8%8B%E5%AE%89%E8%A3%85PaddlePaddle%E4%BE%9D%E8%B5%96%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/07/4%20CentOS%E4%B8%8B%E5%AE%89%E8%A3%85PaddlePaddle%E4%BE%9D%E8%B5%96%E5%BA%93/" itemprop="url">4 CentOS下安装PaddlePaddle依赖库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-07T08:51:25+08:00">
+                2020-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/07/4%20CentOS%E4%B8%8B%E5%AE%89%E8%A3%85PaddlePaddle%E4%BE%9D%E8%B5%96%E5%BA%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/4%20CentOS%E4%B8%8B%E5%AE%89%E8%A3%85PaddlePaddle%E4%BE%9D%E8%B5%96%E5%BA%93/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>前面我们对Linux的命令行和文件系统做了较为细致的介绍，这一小节，老陈主要想介绍的是如何在Linux下部署百度的PaddlePaddle依赖库，本小节为Linux系列的穿插课程，小伙伴们在系统的学习Linux的同时，也掌握相应的实战技巧，避免出现学完基础课程后又把前面的基础给丢了～</strong></p>
+<p><strong>这篇文章你将学到：</strong></p>
+<p><strong>1.了解百度PaddlePaddle（入门）</strong></p>
+<p><strong>2.Linux下部署百度PaddlePaddle依赖库</strong></p>
+<p><strong>3.在服务器中运行python环境</strong></p>
+<p>PaddlePaddle是一个高效，易用的深度学习框架，由百度出产。</p>
+<p>我们可以通过将PaddlePaddle库部署到服务器上，并运行生产级别的深度学习脚本，实现各种各样的深度学习模型。和目前主流的深度学习框架类似，使用Tensor数据结构承载训练数据，目前同时支持动态图和静态图两种编程模式。</p>
+<p>在熟悉PaddlePaddle库的使用之前，我们学习一下如何在服务器上部署相关的库函数，先附上<a href="https://link.zhihu.com/?target=https%3A//www.paddlepaddle.org.cn/">传送门</a>，我所使用的服务器系统为CentOS7.4，首先进入到服务器中：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-9a06bc63a9782211c3a1eb3b0006edb3_1440w.jpg" alt="img">阿里云服务器</p>
+<p>阿里云服务器是部署在云端的服务器，对于日常的工作和学习可以起到一个很好的辅助作用，附上传送门：<a href="https://link.zhihu.com/?target=https%3A//www.aliyun.com/minisite/goods%3FuserCode%3Djbo7iwwk">阿里云服务器</a></p>
+<p>接下来我们需要对服务器相关的环境配置进行检查，如下：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-dad54327f9f726dcff9e7a190a935dc9_1440w.jpg" alt="img"></p>
+<p>所有配置无误后才可以进行下一步的操作。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-52b0dccc6e4b1cdf5104bde16a8d8710_1440w.jpg" alt="img"></p>
+<p>使用python -m pip install paddlepaddle -i <a href="https://link.zhihu.com/?target=https%3A//mirror.baidu.com/pypi/simple">https://mirror.baidu.com/pypi/simple</a>命令进行安装，-i表示指定镜像源，能有效加快安装的速度。</p>
+<p>安装完成后，进入python环境测试是否安装成功，如下：</p>
+<p>首先使用which python查看python环境所在路径，使用cd命令进行/usr/bin/目录下，输入python进入编程环境，最后输入两行python语句对PaddlePaddle库进行测试，可以看到，最后系统提示安装成功！</p>
+<p><img src="https://ae01.alicdn.com/kf/Hbc5cbb1f25da412498c3f34785d1caa7o.png" alt="img"></p>
+<p>现在我们已经可以对PaddlePaddle库进行使用了！后续的章节我会详细讲到对于PaddlePaddle库的使用和部署，经过系统的归纳总结，让大家实现从零基础到熟练部署项目的过程，这是一个漫长且快乐的学习过程，我们一起努力💪。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/3%20Linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/07/3%20Linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" itemprop="url">3 Linux的文件系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-07T00:12:25+08:00">
+                2020-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/07/3%20Linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/3%20Linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>这一小节，我们来聊聊Linux的文件系统和关于文件的几个常用命令：pwd和which命令。</strong></p>
+<p><strong>这篇文章你将学到：</strong></p>
+<p><strong>1.Linux的文件系统</strong></p>
+<p><strong>2.pwd和which命令</strong></p>
+<p><strong>文件的组织</strong></p>
+<p>目前，常用的操作系统分为Linux和Windows，Linux下和Windows下的文件组织形式是很不一样的。</p>
+<p>简单来说，我们可以把Linux下的文件分为普通文件和特殊文件。普通的文件是我们所熟知的文件类型，像文本类型的文件，音频类的文件等等。特殊的文件代表一类特殊的事物，如光盘驱动器，网卡等等。在Linux中，一切皆文件！</p>
+<p><img src="https://pic2.zhimg.com/80/v2-f6cea8a6138f6255f1ca15e7956b2969_1440w.jpg" alt="img"></p>
+<p>在根目录/下，输入ls，回车，可以看到根目录的直属子目录，对于这些直属子目录有个大致印象即可，不用刻意去背，随着对Linux的深入了解，会慢慢熟悉起来。下面我来介绍一下这些目录结构：</p>
+<p>bin：英文“binary”的缩写，表示“二进制文件”，涵盖了会被使用的所有可执行程序</p>
+<p>boot：表示“启动”，包含和Linux启动相关的文件</p>
+<p>dev：英文“device”的缩写，表示设备。其下属的子目录中，对应着不同的设备</p>
+<p>home：home目录为用户的私人目录。Linux中的每一个用户都在home目录下有自己的一个私人目录。比如说我的用户名为john，则我的私人目录为/home/john，如下：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-19b28baff32be4637ef095eb84ad7b93_1440w.jpg" alt="img"></p>
+<p>lib：英文“library”的缩写，代表库的意思，表示会被调用的相关库文件</p>
+<p>opt：表示“可选的应用软件包”，用于安装第三方插件或软件</p>
+<p>var：通常保存操作系统的日志文件</p>
+<p><strong>pwd命令：显示当前所在目录路径</strong></p>
+<p>当我们在日常使用Linux的时候，往往会有种云深不知处的感觉，因此，我们可以使用pwd命令知道此刻的自己位于哪个目录下，通常，命令提示符也有相应的提示功能，pwd能显示从根目录/到当前目录的全路径。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-ac1c90131c14d2abe75ef7bef2f5bf6f_1440w.jpg" alt="img"></p>
+<p>which命令：获取命令的可执行文件的位置</p>
+<p>在Linux中，每一条命令都是开发人员编写好的可执行文件，我们在终端中输入命令并执行，其实是在调用对应的程序。拿pwd来测试，我们可以通过which pwd命令来获取pwd可执行文件所在的目录全路径，如下：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-fe72e815ba8993b4a44f0b2be00d0885_1440w.jpg" alt="img"></p>
+<p>可以看到，pwd命令的可执行文件在bin目录下，前面也提到，bin目录用于存放二进制的可执行文件。</p>
+<p><strong>小结：</strong></p>
+<p><strong>1.在Linux的文件系统中，一切皆文件！</strong></p>
+<p><strong>2.普通用户存放私人文件的地方在/home目录底下，比如我的用户名为john，则我的home目录为/home/john</strong></p>
+<p><strong>3.pwd命令用于显示当前所处在的目录全路径</strong></p>
+<p><strong>4.which命令用于获取命令的可执行文件的位置全路径</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/2%20Linux%E7%BB%88%E7%AB%AF%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/07/2%20Linux%E7%BB%88%E7%AB%AF%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C/" itemprop="url">2 Linux终端与命令行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-07T00:11:25+08:00">
+                2020-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/07/2%20Linux%E7%BB%88%E7%AB%AF%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/2%20Linux%E7%BB%88%E7%AB%AF%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>这是Linux系列的第2篇文章，这一章我们来探讨一下Linux强大的命令行操作，新来的小伙伴们可以翻看我的文章，从Linux第1篇开始看起，跟着我一起进行实际操作，对于自身的快速提高有更大的帮助。废话不多说，一起上车～</strong></p>
+<p><strong>这篇文章你将学到：</strong></p>
+<p><strong>1.命令行初了解</strong></p>
+<p><strong>2.命令的参数及常用格式（短参数与长参数）</strong></p>
+<p><strong>3.命令的历史记录</strong></p>
+<p><strong>4.实用的命令快捷键</strong></p>
+<p><img src="https://ae01.alicdn.com/kf/H910c4ae2c7a04f298f42c65367452ff7L.png" alt="img"></p>
+<p>上图即为一个Linux的终端样式，是不是觉得有点复杂呢？</p>
+<p>先来看一个简单的例子，如果你是苹果macOS的用户，可以找到一个叫做终端的应用：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-b8d384aa63dbb9b21eb726b7b0a1fd2f_1440w.jpg" alt="img"></p>
+<p>打开后，界面如下，可以直接在其中输入命令：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-d1c9d8f0d504f4c9f0f9ccbbc372a583_1440w.jpg" alt="img"></p>
+<p>输入一个简单的命令：</p>
+<p><img src="https://ae01.alicdn.com/kf/H1d71bfbd1ba840818b2f3851b21d6559I.png" alt="img"></p>
+<p>输入命令，按下回车的那一刻，电脑会发出声音，说：“john，你好帅”，某一瞬间感觉自己到达了人生巅峰。不说废话，回到Ubuntu的命令行中。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-2af332d5564ffff076a0b56d1fcafc20_1440w.jpg" alt="img"></p>
+<p>打开终端，此时我们没有输入任何字符的情况下，有一行不知名的字符串，其包含的内容很丰富。</p>
+<p>开头的john表示当前用户的名字。在每个人的电脑上会有所不同。@则代表at，译为 在…当中。@前面表示用户名，后面表示主机名字。所以说，在我的电脑中，我的主机名字为john-VirtualBox，john@john-VirtualBox表示john-VirtualBox主机当中的john用户。</p>
+<p>～表示虚拟机的home目录，$符号则表示当前用户为普通用户。可以通过命令sudo su进入root用户，在Linux中，root用户拥有至高无上的权利，传说中的“删库跑路”就是root干的行当，如下：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-35e54730ab4f99263ce46d1531b7c497_1440w.jpg" alt="img"></p>
+<p>root用户对应的符号为#号。</p>
+<p>john@john-VirtualBox：/$ 对应的意思即为：在电脑john-VirtualBox上登陆了John用户，目前位于/根目录下，此用户为普通用户，权限受到限制。</p>
+<p><strong>ls命令：</strong></p>
+<p>在Linux中，ls的出镜率是很高的，通过ls命令可以列出当前目录下的文件和目录，如下：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-6051320786e3ee59006742b50019b50b_1440w.jpg" alt="img"></p>
+<p>输入ls回车后，显示出根目录下的文件和目录，你没看错，Linux命令原来可以如此简单，但是只会这一个可远远不够，甚至还没有入门，继续来学习。</p>
+<p><strong>命令参数：</strong></p>
+<p>每个命令都有其独有的命令参数，对于ls来说，我们可以通过ls -a来查看当前目录下所有的文件和目录，-a对应于英文中的all，如下：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-d376e258375ea2bd359624eed4eb90c5_1440w.jpg" alt="img"></p>
+<p><strong>命令补全：</strong></p>
+<p>对于一条命令来说，有的时候会过于繁琐，不易于编写，我们可以使用默认的命令补全进行辅助的脚本编写工具，可以通过连按两次Tab键实现命令补全，示例如下：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-9378f70ea65dcb8e9b9bb4998f39dd20_1440w.jpg" alt="img"></p>
+<p>输入bin后，连按两次Tab键，窗口会提示含有bin的文件如下，辅助日常的工作需要。</p>
+<p>再看一个示例：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-a4588f1fa3edaa74d2875ead3bf4efe4_1440w.jpg" alt="img"></p>
+<p>当我输入c后连按两次Tab键，会提示出：Display all 113 possibilities? </p>
+<p>表明以c开头的文件有113个，是否全部显示出来。我们可以输入y，按回车，它竟然真的为我们显示了113个命令。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-9bd2a93564158b73ea65ff1561ebcd50_1440w.jpg" alt="img"></p>
+<p>这时候，并没有全部显示文件，而是进行了分页，可以通过一些快捷键进行浏览：</p>
+<p>空格键：跳到下一页</p>
+<p>回车：跳到下一行</p>
+<p>q：退出列表</p>
+<p><strong>追溯使用过的命令：</strong></p>
+<p><strong>history命令：</strong></p>
+<p>history命令，可以为我们列出之前所有使用过的命令，如下：</p>
+<p><img src="https://ae01.alicdn.com/kf/Hef09050f6f3e4be49d65b011dfc96fa67.png" alt="img"></p>
+<p><strong>常用快捷键：</strong></p>
+<p>在终端中，我们应尽量避免使用鼠标，因此，常用的快捷键是必不可少的，也为我们的业务场景提供了实用的技能，下面列举一些常用的快捷键：</p>
+<p>Ctrl + L：清理终端上的历史内容，也即清屏，保持界面的干净整洁。clear命令能实现相同效果。</p>
+<p>Ctrl + D：给系统传递EOF，告诉程序是时候退出执行了。</p>
+<p>Ctrl + A：光标跳到一行命令的开头。</p>
+<p>Ctrl + E：光标跳到一行命令的结尾。</p>
+<p>Ctrl + U：删除所有在光标左侧的命令字符。</p>
+<p>Ctrl + K：删除所有在光标右侧的命令字符。</p>
+<p><strong>这一小节，我们简单介绍了终端和命令行，了解了几个常用且实用的命令，掌握了追溯历史命令的方法，并了解了几个能提高生产力的命令快捷键，小伙伴们要及时对知识进行消化，尽快投入到下一小节的学习当中，只有不断的实践再实践，能力才能有所提升。</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -354,6 +1260,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -381,9 +1306,9 @@
 <p><img src="https://pic4.zhimg.com/80/v2-ba017b344b6d1dbde56d7c623e948ecf_1440w.jpg" alt="img"></p>
 <p>安装VirtualBox和安装微信一样简单，大家可以自行安装。</p>
 <p>我所使用的是macOS操作系统下的VirtualBox，界面如下：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-16e5bf3e9697cbe6230606919cde22d6_1440w.jpg" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hc6ce37696b144750810932fef2bba5e1a.png" alt="img"></p>
 <p>点击新建，输入名称，版本选择Ubuntu。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-02d13ccc35a1f2da29ee12f5f23affce_1440w.jpg" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hb62f17d85b514d16819413477f6fa4978.png" alt="img"></p>
 <p>点击继续，进入“内存大小”的设置界面，如下，使用默认的1024M虚拟机内存：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-d7b988e8df86f9bb3af6ebf8ea075cdb_1440w.jpg" alt="img"></p>
 <p>进入“虚拟硬盘”设置界面，勾选“现在创建虚拟硬盘”，点击下一步：</p>
@@ -431,7 +1356,7 @@
 <p><img src="https://pic2.zhimg.com/80/v2-f73d31543feda420e1c3634d7fbb6135_1440w.jpg" alt="img"></p>
 <p>可以看到，安装增强功能后，系统界面的分辨率上升了一个台阶。</p>
 <p><strong>共享剪贴板</strong></p>
-<p><img src="https://pic3.zhimg.com/80/v2-1e9ed6a1ca747ab2b49524e6a64c1c2e_1440w.jpg" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hba96da720c2b476ea801db7c21248b4dW.png" alt="img"></p>
 <p>点击Devices的Shared Clipboard，改为Bidirectional（双向的），这样我们就能在宿主机和虚拟机之间使用剪贴板双向拷贝内容了。</p>
 <p><strong>到这里，基本的Ubuntu安装和基本配置就告一段落了，后续的文章会继续带领大家玩转Linux，探索更多的强大的Linux功能。</strong></p>
 
@@ -545,6 +1470,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -657,7 +1601,7 @@
               
                 <a href="/archives/%7C%7C%E6%96%87%E7%AB%A0">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -687,6 +1631,20 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com" title="百度" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -714,6 +1672,15 @@
   <span class="author" itemprop="copyrightHolder">陈佐明</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
 </div>
 
 
@@ -725,7 +1692,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -854,6 +1821,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
   
 
   
@@ -927,6 +1901,102 @@
   
 
   
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: '',
+        projectId: ''
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-users')
+              )
+              ).append($('<span>').text('Visitors ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/zh-tw/docs/variables.html
+      var isPost = ''.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = ''
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = 'titles.push("浅谈MongoDB的复制");titles.push("5 用户权限与群组管理");titles.push("4 CentOS下安装PaddlePaddle依赖库");titles.push("3 Linux的文件系统");titles.push("2 Linux终端与命令行");titles.push("1 学会Linux的基本安装与配置");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
 
   
 

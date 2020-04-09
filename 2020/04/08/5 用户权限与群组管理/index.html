@@ -102,44 +102,30 @@
 
 
 
-<meta name="description" content="Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。 绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特">
+<meta name="description" content="这一小节，我们来聊聊用户权限与群组管理的相关知识。前面的几节课我们讲解了命令行，文件系统，文件和目录，等等。这些都是Linux学习的重中之重，也是基础之基础。 要知道的是，Linux是一个多用户的系统，我们不仅可以在root用户下行使所有权限，也可以实现多人同时不同地点地登陆同一个Linux系统，每个人可以设定不同的权限，通过设定不同的权限，可以限定每个人能做什么，不能做什么，而设置这些权限的当权">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1 学会Linux的基本安装与配置">
-<meta property="og:url" content="http://yoursite.com/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="5 用户权限与群组管理">
+<meta property="og:url" content="http://yoursite.com/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="老陈秀的博客">
-<meta property="og:description" content="Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。 绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特">
+<meta property="og:description" content="这一小节，我们来聊聊用户权限与群组管理的相关知识。前面的几节课我们讲解了命令行，文件系统，文件和目录，等等。这些都是Linux学习的重中之重，也是基础之基础。 要知道的是，Linux是一个多用户的系统，我们不仅可以在root用户下行使所有权限，也可以实现多人同时不同地点地登陆同一个Linux系统，每个人可以设定不同的权限，通过设定不同的权限，可以限定每个人能做什么，不能做什么，而设置这些权限的当权">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ba017b344b6d1dbde56d7c623e948ecf_1440w.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hc6ce37696b144750810932fef2bba5e1a.png">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hb62f17d85b514d16819413477f6fa4978.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d7b988e8df86f9bb3af6ebf8ea075cdb_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-0dd71d5441113c90f49231ff73b52f4c_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-d1d7cab5a12ec2f2f03d124af718e8a9_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d2f26e9750a6e063b3d5281451aa8e43_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-6daa3bb2dca151fcf0b3767aca141854_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-3886b0d43fad0bcd71006c5de2758b53_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-acaa21b8afe70db73df70ba68a9c3788_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-4f55ee176df3e720e3423eb51cb25fd0_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-762241ae7e051680621646d973df456c_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-30c7021a2201e573fbafec0610f1bfac_1440w.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-cce3432f4e2b8425dc8e4ddbfe2e9720_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-8614ce30cb70873f9ea6957db000d6b3_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-e89ba6c422bde1c906c3a13f720574f1_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-91d45bd5a518270ec15cb57618a2664d_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-bbcd120a5280b563cd41431b9f4e0f4d_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-02d8d0825f07c6b6d1274a2a3d50b2f3_1440w.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-e9b7a529ffeef8f4c45484086d75af1b_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-54bcebe7f674aa1169b60dcde4208571_1440w.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-f73d31543feda420e1c3634d7fbb6135_1440w.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hba96da720c2b476ea801db7c21248b4dW.png">
-<meta property="article:published_time" content="2020-04-06T05:11:25.000Z">
-<meta property="article:modified_time" content="2020-04-06T08:06:23.621Z">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Hb62fdc6fda664293ae864ad87ca47d3bs.png">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-3ef4d6b0a33d58dd60c66f28588f73c1_1440w.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-416c640455c637183073704c27e978f3_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-c12c496282488c6877d9ddbc52e20400_1440w.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/H5470e549af37475e8631483e84cbbbban.png">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-7f6c7db99bd26681b24d913e5a93add4_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-1a01f849026e7fc444e8617b939640c3_1440w.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-89c9860dd50c55fa0cfb28afe9aef661_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-2c2734f7e8f6373fc0a344fdc2fbf8d0_1440w.png">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-f8183fcbc8a44d4fd1f4703a48aeb6fc_1440w.png">
+<meta property="article:published_time" content="2020-04-08T00:35:25.000Z">
+<meta property="article:modified_time" content="2020-04-07T00:58:52.235Z">
 <meta property="article:author" content="陈佐明">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="运维">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg">
+<meta name="twitter:image" content="https://ae01.alicdn.com/kf/Hb62fdc6fda664293ae864ad87ca47d3bs.png">
 
 
 
@@ -169,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/06/1 学会Linux的基本安装与配置/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/08/5 用户权限与群组管理/"/>
 
 
 
 
 
-  <title>1 学会Linux的基本安装与配置 | 老陈秀的博客</title>
+  <title>5 用户权限与群组管理 | 老陈秀的博客</title>
   
 
 
@@ -322,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈佐明">
@@ -339,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">1 学会Linux的基本安装与配置</h1>
+          <h1 class="post-title" itemprop="name headline">5 用户权限与群组管理</h1>
         
 
         <div class="post-meta">
@@ -351,8 +337,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-06T13:11:25+08:00">
-                2020-04-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T08:35:25+08:00">
+                2020-04-08
               </time>
             
 
@@ -370,8 +356,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+                <a href="/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/08/5%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E7%BE%A4%E7%BB%84%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,68 +409,65 @@
       
 
       
-        <p>Linux对于开发者来说并不陌生，无论是在公司项目的部署还是对命令行的学习，Linux都是一个不错的选择。</p>
-<p>绝大部分的小伙伴的电脑都是Windows或macOS操作系统，若想使用Linux操作系统，我们可以运用虚拟技术，从而在一个操作系统里“运行”Linux操作系统。相比于在硬盘上直接安装多个操作系统，虚拟化使我们可以更加灵活地体验各种操作系统，也不需要占用大量的硬盘资源，这对于一些硬件配置不是特别高的同学是一个福音。</p>
-<p>要想使用虚拟化技术，我们要先来安装虚拟机软件：VirtualBox</p>
-<p>VirtualBox的官方网站是：<a href="https://link.zhihu.com/?target=https%3A//www.virtualbox.org/">https://www.virtualbox.org</a></p>
-<p><img src="https://pic4.zhimg.com/80/v2-d4f7a560ec27fb4fe1a21b5920cda7af_1440w.jpg" alt="img"></p>
-<p>进入官网后，大大的download字样显示在眼前，生怕你看不到，点击download后，自行选择相应的操作系统平台进行下载。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-ba017b344b6d1dbde56d7c623e948ecf_1440w.jpg" alt="img"></p>
-<p>安装VirtualBox和安装微信一样简单，大家可以自行安装。</p>
-<p>我所使用的是macOS操作系统下的VirtualBox，界面如下：</p>
-<p><img src="https://ae01.alicdn.com/kf/Hc6ce37696b144750810932fef2bba5e1a.png" alt="img"></p>
-<p>点击新建，输入名称，版本选择Ubuntu。</p>
-<p><img src="https://ae01.alicdn.com/kf/Hb62f17d85b514d16819413477f6fa4978.png" alt="img"></p>
-<p>点击继续，进入“内存大小”的设置界面，如下，使用默认的1024M虚拟机内存：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-d7b988e8df86f9bb3af6ebf8ea075cdb_1440w.jpg" alt="img"></p>
-<p>进入“虚拟硬盘”设置界面，勾选“现在创建虚拟硬盘”，点击下一步：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-0dd71d5441113c90f49231ff73b52f4c_1440w.jpg" alt="img"></p>
-<p>默认选择VDI，</p>
-<p><img src="https://pic2.zhimg.com/80/v2-d1d7cab5a12ec2f2f03d124af718e8a9_1440w.jpg" alt="img"></p>
-<p>作为学习用途，磁盘大小一般设置10GB足够了，如下：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-d2f26e9750a6e063b3d5281451aa8e43_1440w.jpg" alt="img"></p>
-<p>点击创建，会自动回到主界面，并多了一个虚拟机：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-6daa3bb2dca151fcf0b3767aca141854_1440w.jpg" alt="img"></p>
-<p>下面，我来演示在虚拟机中安装Ubuntu操作系统</p>
-<p>Ubuntu官网下载地址：<a href="https://link.zhihu.com/?target=https%3A//www.ubuntu.com/download/desktop">Download Ubuntu Desktop | Download | Ubuntu</a></p>
-<p>进入官网后，点击download，我们下载最新的Ubuntu的LTS版，</p>
-<p><img src="https://pic4.zhimg.com/80/v2-3886b0d43fad0bcd71006c5de2758b53_1440w.jpg" alt="img"></p>
-<p>点击download后，会自动进行安装包的下载，稍等片刻。</p>
-<p>下载完成后，回到虚拟机，右击刚创建的虚拟机，点击设置</p>
-<p><img src="https://pic1.zhimg.com/80/v2-acaa21b8afe70db73df70ba68a9c3788_1440w.jpg" alt="img"></p>
-<p>点击右边的小光盘，选择刚下载的iso文件，即可。</p>
-<p>回到主界面后，点击虚拟机并启动。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-4f55ee176df3e720e3423eb51cb25fd0_1440w.jpg" alt="img"></p>
-<p>安装界面步骤如下：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-762241ae7e051680621646d973df456c_1440w.jpg" alt="img"></p>
-<p>选择英语界面：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-30c7021a2201e573fbafec0610f1bfac_1440w.jpg" alt="img"></p>
-<p><img src="https://pic1.zhimg.com/80/v2-cce3432f4e2b8425dc8e4ddbfe2e9720_1440w.jpg" alt="img"></p>
-<p>这是关于更新和应用程序的。默认选中normal installation，会自动安装常用的游戏和应用软件，继续Continue，进入下一步。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-8614ce30cb70873f9ea6957db000d6b3_1440w.jpg" alt="img"></p>
-<p>进入用户信息，用户名和密码的设定界面：</p>
-<p>慢慢等待安装即可。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-e89ba6c422bde1c906c3a13f720574f1_1440w.jpg" alt="img"></p>
-<p>安装完成后，进入到我们的欢迎界面：</p>
-<p><img src="https://pic2.zhimg.com/80/v2-91d45bd5a518270ec15cb57618a2664d_1440w.jpg" alt="img"></p>
-<p>点击next，</p>
-<p><img src="https://pic2.zhimg.com/80/v2-bbcd120a5280b563cd41431b9f4e0f4d_1440w.jpg" alt="img"></p>
-<p>这个界面中，意思是“你是否愿意发送信息到官方”，也即为开发者提供信息以帮助他们完善系统，我们选择“No”，点击next</p>
-<p><strong>对虚拟机进行一些初始配置：</strong></p>
-<p><strong>1.安装增强功能</strong></p>
-<p><img src="https://pic4.zhimg.com/80/v2-02d8d0825f07c6b6d1274a2a3d50b2f3_1440w.jpg" alt="img"></p>
-<p>点击Insert Guest Additions CD image，安装增强功能：</p>
-<p>弹出一个弹窗，点击run即可：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-e9b7a529ffeef8f4c45484086d75af1b_1440w.jpg" alt="img"></p>
-<p>会要求输入密码。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-54bcebe7f674aa1169b60dcde4208571_1440w.jpg" alt="img"></p>
-<p>输入密码后，很快完成安装，按Return键关闭窗口</p>
-<p><img src="https://pic2.zhimg.com/80/v2-f73d31543feda420e1c3634d7fbb6135_1440w.jpg" alt="img"></p>
-<p>可以看到，安装增强功能后，系统界面的分辨率上升了一个台阶。</p>
-<p><strong>共享剪贴板</strong></p>
-<p><img src="https://ae01.alicdn.com/kf/Hba96da720c2b476ea801db7c21248b4dW.png" alt="img"></p>
-<p>点击Devices的Shared Clipboard，改为Bidirectional（双向的），这样我们就能在宿主机和虚拟机之间使用剪贴板双向拷贝内容了。</p>
-<p><strong>到这里，基本的Ubuntu安装和基本配置就告一段落了，后续的文章会继续带领大家玩转Linux，探索更多的强大的Linux功能。</strong></p>
+        <p><strong>这一小节，我们来聊聊用户权限与群组管理的相关知识。前面的几节课我们讲解了命令行，文件系统，文件和目录，等等。这些都是Linux学习的重中之重，也是基础之基础。</strong></p>
+<p><strong>要知道的是，Linux是一个多用户的系统，我们不仅可以在root用户下行使所有权限，也可以实现多人同时不同地点地登陆同一个Linux系统，每个人可以设定不同的权限，通过设定不同的权限，可以限定每个人能做什么，不能做什么，而设置这些权限的当权者，就是root。</strong></p>
+<p><strong>在正式开始本小节的内容前，请双击屏幕给老陈秀一个鼓励吧（暗示双击点赞）</strong></p>
+<p><strong>这篇文章你将学到：</strong></p>
+<p><strong>1.用户权限</strong></p>
+<p><strong>2.群组管理命令的使用</strong></p>
+<p>因为Linux具有多用户的功能，所以管理者要对使用者的权限进行严格的管理，以防止出现居心叵测的用户恶意破坏Linux的文件系统。</p>
+<p>在讲解用户权限之前，我们先来介绍一下群组管理。群组管理是一个群组聚集的概念。举个现实当中的例子，每个人都会有自己的同学，朋友，家人。即可以分为3个群组，分别为classmates，friends，family。对于我来说，我的用户名为john，则john会同时属于3个群组。</p>
+<p>下面进入实操环节：</p>
+<p><img src="https://ae01.alicdn.com/kf/Hb62fdc6fda664293ae864ad87ca47d3bs.png" alt="img"></p>
+<p>可以看到的是在最后一行中出现一个#号，代表着当前为root用户，拥有着至高无上的权利。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3ef4d6b0a33d58dd60c66f28588f73c1_1440w.png" alt="img"></p>
+<p>输入groups，按下回车，可以发现已经有了很多的群组。</p>
+<h2 id="1-用户管理的命令"><a href="#1-用户管理的命令" class="headerlink" title="1.用户管理的命令"></a><strong>1.用户管理的命令</strong></h2><p>下面我会带领大家创建3个群组和一个用户john。</p>
+<p><strong>adduser命令：添加新用户</strong></p>
+<p>顾名思义，adduser命令用于添加新用户。用法也极为简单，在adduser后面接上要创建的用户名。</p>
+<p><strong>创建3个群组：classmates，friends，family</strong></p>
+<p>添加群组，我们使用addgroup命令，如下：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-416c640455c637183073704c27e978f3_1440w.jpg" alt="img"></p>
+<p>addgroup后面跟上群组名称classmates，发现弹出提示：<strong>只有root用户可以添加用户或群组</strong></p>
+<p>我们如何成为root用户呢？可以通过两种方法：</p>
+<p>1.临时获得root用户的权限</p>
+<p>想要临时获得root用户的权限，只需要在命令的前面加上sudo即可，如下：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-c12c496282488c6877d9ddbc52e20400_1440w.jpg" alt="img"></p>
+<p>可以看到输出了Done，就是成功了的意思。</p>
+<p>2.永久获得root用户的权限（进入root用户）</p>
+<p>先执行sudo su，进入root用户，如下：</p>
+<p><img src="https://ae01.alicdn.com/kf/H5470e549af37475e8631483e84cbbbban.png" alt="img"></p>
+<p>字符变为#号，说明当前为root用户。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-7f6c7db99bd26681b24d913e5a93add4_1440w.jpg" alt="img"></p>
+<p>上图完成了群组的创建，很好。不过目前这个群组还是空的，我们还没有往里面添加用户。下面将用户john添加到群组classmates中，如下：</p>
+<p>我们使用<strong>usermod命令</strong>修改用户账号，usermod可以理解为user + modify ，意为“修改用户”的意思，需要对其指定参数-g来修改用户所在的群组，用法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -g classmates john</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic4.zhimg.com/80/v2-1a01f849026e7fc444e8617b939640c3_1440w.jpg" alt="img"></p>
+<p>对于groups命令，只需在groups后面接上用户名，即可了解其所在的群组。</p>
+<p>我们再创建两个群组，如下：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-89c9860dd50c55fa0cfb28afe9aef661_1440w.jpg" alt="img"></p>
+<p>我们将用户john同时添加到三个群组中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G classmates,friends,family john</span><br></pre></td></tr></table></figure>
+
+<p>相比于 -g， -G命令可以同时将一个用户添加到多个群组。</p>
+<p>以上命令将用户john同时添加到三个群组中，群组间使用逗号隔开。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-2c2734f7e8f6373fc0a344fdc2fbf8d0_1440w.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">再我们在使用usermod的时候，需要注意一点：-g参数和-G参数都有修改群组的作用，但是，它们会把用户先从</span><br><span class="line">原来的群组中去除掉，再加入到新的群组。如果你不想离开原先的群组，而又希望加入新的群组，则可以这样做：</span><br><span class="line">在-G的基础上加上-a参数，表示“追加群组”的意思，如下：</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic1.zhimg.com/80/v2-f8183fcbc8a44d4fd1f4703a48aeb6fc_1440w.png" alt="img"></p>
+<p>以上命令将用户john追加到群组people中，这样的话，john则属于四个群组了。</p>
+<p><strong>delgroup命令：删除群组</strong></p>
+<p>delgroup命令用于删除群组，用法也十分的简单，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delgroup classmates</span><br></pre></td></tr></table></figure>
+
+<p>这样，我们就删除了classmates的群组了。</p>
+<p><strong>小结：</strong></p>
+<p><strong>1.adduser命令用于添加用户</strong></p>
+<p><strong>2.命令前+ sudo 获取管理权限</strong></p>
+<p><strong>3.groups 【user】 groups后接用户名，显示用户所在的群组</strong></p>
+<p><strong>4.delgroup 【group】 用于删除群组</strong></p>
+<p><strong>5.usermod -G -a 【group】【user】 修改用户所在群组，-a参数用于追加群组</strong></p>
 
       
     </div>
@@ -517,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/02/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2020/04/07/4%20CentOS%E4%B8%8B%E5%AE%89%E8%A3%85PaddlePaddle%E4%BE%9D%E8%B5%96%E5%BA%93/" rel="next" title="4 CentOS下安装PaddlePaddle依赖库">
+                <i class="fa fa-chevron-left"></i> 4 CentOS下安装PaddlePaddle依赖库
               </a>
             
           </div>
@@ -527,8 +510,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/07/2%20Linux%E7%BB%88%E7%AB%AF%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="prev" title="2 Linux终端与命令行">
-                2 Linux终端与命令行 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/" rel="prev" title="浅谈MongoDB的复制">
+                浅谈MongoDB的复制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -584,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -650,6 +642,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-用户管理的命令"><span class="nav-number">1.</span> <span class="nav-text">1.用户管理的命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -968,13 +976,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = '1 学会Linux的基本安装与配置'.length > 0
+      var isPost = '5 用户权限与群组管理'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '1 学会Linux的基本安装与配置'
+        var title = '5 用户权限与群组管理'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
