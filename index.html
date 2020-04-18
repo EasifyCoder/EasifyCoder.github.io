@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%AB%98%E7%BA%A7%E6%8A%80%E6%9C%AF%E4%B8%93%E5%AE%B6%E7%AB%A0%E5%89%91%E9%94%8B%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B1%95%E7%9A%84%208%20%E4%B8%AA%E8%A6%81%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈佐明">
@@ -313,7 +313,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/" itemprop="url">浅谈MongoDB的复制</a></h1>
+                <a class="post-title-link" href="/2020/04/18/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%AB%98%E7%BA%A7%E6%8A%80%E6%9C%AF%E4%B8%93%E5%AE%B6%E7%AB%A0%E5%89%91%E9%94%8B%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B1%95%E7%9A%84%208%20%E4%B8%AA%E8%A6%81%E7%82%B9/" itemprop="url">阿里巴巴高级技术专家章剑锋：大数据发展的 8 个要点</a></h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-08T10:48:47+08:00">
-                2020-04-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-18T14:54:25+08:00">
+                2020-04-18
               </time>
             
 
@@ -344,8 +344,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/08/%E6%B5%85%E8%B0%88MongoDB%E7%9A%84%E5%A4%8D%E5%88%B6/" itemprop="commentCount"></span>
+                <a href="/2020/04/18/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%AB%98%E7%BA%A7%E6%8A%80%E6%9C%AF%E4%B8%93%E5%AE%B6%E7%AB%A0%E5%89%91%E9%94%8B%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B1%95%E7%9A%84%208%20%E4%B8%AA%E8%A6%81%E7%82%B9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/18/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%AB%98%E7%BA%A7%E6%8A%80%E6%9C%AF%E4%B8%93%E5%AE%B6%E7%AB%A0%E5%89%91%E9%94%8B%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B1%95%E7%9A%84%208%20%E4%B8%AA%E8%A6%81%E7%82%B9/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,7 +394,239 @@
       
         
           
-            <p>mongodb数据库在实际生产环境中，大多数基于多服务器集群运行，并进行相应的数据分布式处理。因此，</p>
+            <p>笔者从 2008 年开始工作到现在也有 11 个年头了，一路走来都在和数据打交道，做过大数据底层框架内核的开发（Hadoop，Pig，Tez，Spark，Livy），也做过上层大数据应用开发（写 MapReduce Job 做 ETL ，用 Hive 做 Ad hocquery，用 Tableau 做数据可视化，用 R 做数据分析）。今天我想借此机会和大家聊聊我所理解的大数据现状和未来。</p>
+<p>首先让我们来聊聊什么是大数据。大数据这个概念已经出来很多年了（超过10年），但一直没有一个准确的定义（也许也并不需要）。数据工程师（DataEngineer）对大数据的理解会更多从技术和系统的角度去理解，而数据分析人员（Data Analyst）对大数据理解会从产品的角度去理解，所以数据工程师（Data Engineer) 和数据分析人员（Data Analyst）所理解的大数据肯定是有差异的。<strong>我所理解的大数据是这样的，大数据不是单一的一种技术或者产品，它是所有与数据相关的综合学科。看大数据我会从 2 个维度来看，一个是数据流的维度（下图的水平轴），另外一个是技术栈的维度（下图的纵轴）。</strong></p>
+<p><img src="https://ae01.alicdn.com/kf/H408f91f056704e51b312eaea1eb482dbQ.png" alt="img"></p>
+<p>其实我一直不太喜欢张口闭口讲“大数据”，我更喜欢说“数据”。因为大数据的本质在于“数据”，而不是“大”。由于媒体一直重点宣扬大数据的“大”，所以有时候<strong>我们往往会忽然大数据的本质在“数据”，而不是“大”，“大”只是你看到的表相，本质还是数据自身。</strong></p>
+<p>在我们讲清楚大数据的含义之后，我们来聊聊大数据目前到底处在一个什么样的位置。从历史发展的角度来看，每一项新技术都会经历下面这样一个技术成熟度曲线。</p>
+<p><img src="https://ae01.alicdn.com/kf/Hdcd840c85e0649188d87c6b827f52171g.png" alt="img"></p>
+<p>当一项新技术刚出来的时候人们会非常乐观，常常以为这项技术会给人类带来巨大的变革，对此持有过高的期望，所以这项技术一开始会以非常快的速度受到大家追捧，然后到达一个顶峰，之后人们开始认识到这项新技术并没有当初预想的那么具有革命性，然后会过于悲观，之后就会经历泡沫阶段。等沉寂一定阶段之后，人们开始回归理性，正视这项技术的价值，然后开始正确的应用这项技术，从此这项技术开始走向稳步向前发展的道路。（题外话，笔者在看这幅图的时候也联想到了一个男人对婚姻看法的曲线图，大家自己脑补）。</p>
+<p><strong>从大数据的历史来看，大数据已经经历了 2 个重要阶段</strong></p>
+<p>两个重要阶段是指过高期望的峰值和泡沫化的底谷期 。现在正处于稳步向前发展的阶段。我们可以从 googletrend 上 big data 的曲线就能印证。大数据大约从 2009 年开始走向人们的视野，在 2015 年左右走向了顶峰，然后慢慢走向下降通道（当然这张曲线并不会和上面这张技术成熟度曲线完全拟合，比如技术曲线处在下降通道有可能会使讨论这项技术的搜索量增加）。</p>
+<p><img src="https://ae01.alicdn.com/kf/Hf6511627c9c843fb8de1c03b8b7704dck.png" alt="img"></p>
+<p>接下来我想讲一下我对大数据领域未来趋势的几个判断。</p>
+<p><strong>数据规模会继续扩大，大数据将继续发扬光大</strong></p>
+<p>前面已经提到过，大数据已经度过了过高期望的峰值和泡沫化的底谷期，现在正在稳步向前发展。做这样判断主要有以下 2 个原因：</p>
+<ul>
+<li><p>上游数据规模会继续增长，特别是由于 IOT 技术的发展和成熟，以及未来 5G 技术的铺开。在可预测的未来，数据规模仍将继续快速增长，这是能够带动大数据持续稳定向前发展的基本动力。</p>
+</li>
+<li><p>下游数据产业还有很多发展的空间，还有很多数据的价值我们没有挖掘出来。</p>
+</li>
+</ul>
+<p>虽然现在人工智能，区块链抢去了大数据的风口位置，也许大数据成不了未来的主角，但大数据也绝对不是跑龙套的，大数据仍将扮演一个重要而基础的角色。可以这么说，只要有数据在，大数据就永远不会过时。我想在大部分人的有生之年，我们都会见证大数据的持续向上发展。</p>
+<p><strong>数据的实时性需求将更加突出</strong></p>
+<p>之前大数据遇到的最大挑战在于数据规模大（所以大家会称之为“大数据”），经过工业界多年的努力和实践，规模大这个问题基本已经解决了。接下来几年，更大的挑战在于速度，也就是实时性。而大数据的实时性并不是指简单的传输数据或者处理数据的实时性，而是从端到端的实时，任何一个步骤速度慢了，就影响整个大数据系统的实时性。所以大数据的实时性，包括以下几个方面：</p>
+<ul>
+<li><p>快速获取和传输数据</p>
+</li>
+<li><p>快速计算处理数据</p>
+</li>
+<li><p>实时可视化数据</p>
+</li>
+<li><p>在线机器学习，实时更新机器学习模型</p>
+</li>
+</ul>
+<p>目前以 Kafka，Flink 为代表的流处理计算引擎已经为实时计算提供了坚实的底层技术支持，相信未来在实时可视化数据以及在线机器学习方面会有更多优秀的产品涌现出来。当大数据的实时性增强之后，在数据消费端会产生更多有价值的数据，从而形成一个更高效的数据闭环，促进整个数据流的良性发展。</p>
+<p><strong>大数据基础设施往云上迁移势不可挡</strong></p>
+<p>目前IT基础设施往云上迁移不再是一个大家还需要争论的问题，这是大势所趋。当然我这边说的云并不单单指公有云，也包括私有云，混合云。因为由于每个企业的业务属性不同，对数据安全性的要求不同，不可能把所有的大数据设施都部署在公有云上，但向云上迁移这是一个未来注定的选择。目前各大云厂商都提供了各种各样的大数据产品以满足各种用户需求，包括平台型（PAAS) 的 EMR ，服务型 (SAAS) 的数据可视化产品等等。</p>
+<p>大数据基础设施的云化对大数据技术和产品产生也有相应的影响。大数据领域的框架和产品将更加 Cloud Native 。</p>
+<ul>
+<li><p><strong>计算和存储的分离。</strong>我们知道每个公有云都有自己对应的分布式存储，比如 AWS 的 S3 。 S3 在一些场合可以替换我们所熟知的 HDFS ，而且成本更低。而 S3 的物理存储并不是在 EC2 上面，对 EC2 来说， S3 是 remote storage 。所以如果你要是 AWS 上面做大数据开发和应用，而且你的数据是在 S3 上，那么你就自然而然用到了计算和存储的分离。</p>
+</li>
+<li><p><strong>拥抱容器</strong>，与 Kubernate 的整合大势所趋，我们知道在云环境中 Kuberneate 基本上已经是容器资源调度的标准。</p>
+</li>
+<li><p><strong>更具有弹性（Elastic）。</strong></p>
+</li>
+<li><p><strong>与云上其他产品和服务整合更加紧密。</strong> </p>
+</li>
+</ul>
+<p><strong>大数据产品全链路化</strong></p>
+<p>全链路化是指提供端到端的全链路解决方案，而不是简单的堆积一些大数据产品组件。以 Hadoop 为代表的大数据产品一直被人诟病的主要问题就是用户使用门槛过高，二次开发成本太高。全链路化就是为了解决这一问题，用户需要的并不是 Hadoop，Spark，Flink 等这些技术，而是要以这些技术为基础的能解决业务问题的产品。 Cloudera 的从 Edge 到 AI 是我比较认同的方案。大数据的价值并不是数据本身，而是数据背后所隐藏的对业务有影响的信息和知识。下面是一张摘自 wikipedia 的经典数据金字塔的图。</p>
+<p><img src="https://ae01.alicdn.com/kf/Ha5318d5678444656a70551bac09f12b8E.png" alt="img"></p>
+<p>大数据技术就是对最原始的数据进行不断处理加工提炼，金字塔每上去一层，对应的数据量会越小，同时对业务的影响价值会更大更快。而要从数据（Data) 最终提炼出智慧（Wisdom），数据要经过一条很长的数据流链路，没有一套完整的系统保证整条链路的高效运转是很难保证最终从数据中提炼出来有价值的东西的，所以大数据未来产品全链路化是另外一个大的趋势。</p>
+<p><strong>大数据技术往下游数据消费和应用端转移</strong></p>
+<p>上面讲到了大数据的全链路发展趋势，那么这条长长的数据链路目前的状况是如何，未来又会有什么样的趋势呢？</p>
+<p>我的判断是未来大数据技术的创新和发力会更多的转移到下游数据消费和应用端。之前十多年大数据的发展主要集中在底层的框架，比如最开始引领大数据风潮的 Hadoop ，后来的计算引擎佼佼者 Spark，Flink 以及消息中间件 Kafka ，资源调度器 Kubernetes 等等，每个细分领域都涌现出了一系列优秀的产品。总的来说，在底层技术框架这块，大数据领域已经基本打好了基础，接下来要做的是如何利用这些技术为企业提供最佳用户体验的产品，以解决用户的实际业务问题，或者说未来大数据的侧重点将从底层走向上层。之前的大数据创新更偏向于 IAAS 和 PAAS ，未来你将看到更多 SAAS 类型的大数据产品和创新。</p>
+<p>从近期一些国外厂商的收购案例，我们可以略微看出一些端倪。 </p>
+<p>1、2019 年 6 月 7 日，谷歌宣布以 26 亿美元收购了数据分析公司 Looker，并将该公司并入 Google Cloud。</p>
+<p>2、2019 年 6 月 10 日，Salesforce 宣布以 157 亿美元的全股票交易收购 Tableau ，旨在夯实在数据可视化以及帮助企业解读所使用和所积累的海量数据的其他工具方面的工作。</p>
+<p>3、2019 年 9 月初，Cloudera 宣布收购 Arcadia Data 。 Arcadia Data 是一家云原生 AI 驱动的商业智能实时分析厂商。</p>
+<p>面对最终用户的大数据产品将是未来大数据竞争的重点，我相信会未来大数据领域的创新也将来源于此，未来 5 年内大概率至少还会再出一个类似 Looker 这样的公司，但是很难再出一个类似 Spark 的计算引擎。</p>
+<p><strong>底层技术的集中化和上层应用的全面开花</strong></p>
+<p>学习过大数据的人都会感叹大数据领域的东西真是多，特别是底层技术，感觉学都学不来。经过多年的厮杀和竞争，很多优秀的产品已经脱颖而出，也有很多产品慢慢走向消亡。比如批处理领域的 Spark 引擎基本上已经成为批处理领域的佼佼者，传统的 MapReduce 除了一些旧有的系统，基本不太可能会开发新的 MapReduce 应用。 Flink 也基本上成为低延迟流处理领域的不二选择，原有的 Storm 系统也开始慢慢退出历史舞台。同样 Kafka 也在消息中间件领域基本上占据了垄断地位。未来的底层大数据生态圈中将不再有那么多的新的技术和框架，每个细分领域都将优胜劣汰，走向成熟，更加集中化。<strong>未来更大的创新将更多来来自上层应用或者全链路的整合方面。</strong>在大数据的上层应用方面未来将会迎来有更多的创新和发展，比如基于大数据上的BI产品， AI 产品等等，某个垂直领域的大数据应用等等，我相信未来我们会看到更多这方面的创新和发展。</p>
+<p><strong>开源闭源并驾齐驱</strong></p>
+<p>大数据领域并不是只有 Hadoop，Spark，Flink 等这类大家耳熟能详的开源产品，还有很多优秀的闭源产品，比如 AWS 上的 Redshift ，阿里的 MaxCompute 等等。这些产品虽然没有开源产品那么受开发者欢迎，但是他们对于很多非互联网企业来说是非常受欢迎的。因为对于一个企业来说，采用哪种大数据产品有很多因素需要考虑，否开源并不是唯一标准。<strong>产品是否稳定，是否有商业公司支持，是否足够安全，是否能和现有系统整合等等往往是某些企业更需要考虑的东西，而闭源产品往往在这类企业级产品特性上具有优势。</strong></p>
+<p>最近几年开源产品受公有云的影响非常大，公有云可以无偿享受开源的成果，抢走了开源产品背后的商业公司很多市场份额，所以最近很多开源产品背后的商业公司开始改变策略，有些甚至修改了 Licence 。不过我觉得公有云厂商不会杀死那些开源产品背后的商业公司，否则就是杀鸡取卵，杀死开源产品背后的商业公司，其实就是杀死开源产品的最大技术创新者，也就是杀死开源产品本身。我相信开源界和公有云厂商最终会取得一个平衡，开源仍然会是一个主流，仍然会是创新的主力，一些优秀的闭源产品同样也会占据一定的市场空间。</p>
+<p><strong>最后我想再次总结下本文的几个要点：</strong></p>
+<p>1、目前大数据已经度过了最火的峰值期和泡沫化的底谷期，现在正处于稳步向前发展的阶段。</p>
+<p>2、数据规模会继续扩大，大数据将继续发扬光大</p>
+<p>3、 数据的实时性需求将更加突出</p>
+<p>4、大数据基础设施往云上迁移势不可挡</p>
+<p>5、大数据产品全链路化</p>
+<p>6、大数据技术往下游数据消费和应用端转移</p>
+<p>7、底层技术的集中化和上层应用的全面开花</p>
+<p>8、开源闭源并驾齐驱</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/Mac%20OS%E5%AE%89%E8%A3%85homebrew/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/Mac%20OS%E5%AE%89%E8%A3%85homebrew/" itemprop="url">Mac OS安装homebrew</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-12T00:08:10+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/12/Mac%20OS%E5%AE%89%E8%A3%85homebrew/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/12/Mac%20OS%E5%AE%89%E8%A3%85homebrew/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>![image-20200412000829044](/Users/mac/Library/Application Support/typora-user-images/image-20200412000829044.png)</p>
+<p>![image-20200412000911042](/Users/mac/Library/Application Support/typora-user-images/image-20200412000911042.png)</p>
+<p>![image-20200412000946465](/Users/mac/Library/Application Support/typora-user-images/image-20200412000946465.png)</p>
+<p>![image-20200412001109831](/Users/mac/Library/Application Support/typora-user-images/image-20200412001109831.png)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf &#x2F;usr&#x2F;local&#x2F;.git</span><br></pre></td></tr></table></figure>
+
+
+
+<p>![image-20200412001022852](/Users/mac/Library/Application Support/typora-user-images/image-20200412001022852.png)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;bin&#x2F;zsh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;gitee.com&#x2F;cunkai&#x2F;HomebrewCN&#x2F;raw&#x2F;master&#x2F;Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+
+
 
           
         
@@ -1197,6 +1429,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈佐明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老陈秀的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/" itemprop="url">机器学习概览</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-07T00:11:25+08:00">
+                2020-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​        现如今，在我们的日常生活中，每天你都可能在不知不觉中使用了各种各样的机器学习算法，机器学习算法已经融入到了我们的生活当中，并逐渐依赖于机器学习所带来的好处。比如 当你每一次使用像诸如谷歌 (Google)或必应 (Bing) 的搜索引擎时，它们运作得如此之好的原因之一便是由Google或微软实现的一种学习算法可以“学会”如何对网页进行排名，并对用户进行展示。当你使用邮箱的时候，程序会对收件箱进行垃圾邮件和有效邮件的分类，使你在使用邮箱的过程中免受垃圾邮件的困扰。</p>
+<p>​        自上世纪以来，人工智能经历了从符号主义到连接主义的漫长的发展。人工智能可以大致分为行为主义，符号主义，和连接主义三个学派。<u>行为主义</u>是基于控制论的，用于构建感知和控制的系统，如控制机器人行走，单脚站立等。 <u>符号主义</u>是基于算术逻辑的，基于表达式的，当求解具体问题时，先将其映射为相应的表达式，通过解出表达式的解，从而解决具体的问题。如果你在求解某个具体问题时，能用if，else if条件语句，和相应的数学表达式进行表示， 其实这就是符号主义的方法，比较典型的就是专家系统。现如今对专家系统的使用已经越来越少。符号主义使计算机具备理性的思维，但是人类在实际生活中，不仅仅有理性思维，还有很多的感性思维。而<u>连接主义</u>就是在模拟人的这种感性思维，其在仿造我们人脑内的神经元连接关系，从而引出了很多的新概念：神经元，全神经网络，前向传播，反向传播，学习率。。</p>
+<p>​        直到现在，也没有一个对机器学习的标准的定义，其中比较经典的对于机器学习的定义是Tom Mitchell给出的：</p>
+<blockquote>
+<p>  “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/1%20%E5%AD%A6%E4%BC%9ALinux%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1394,167 +1780,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈佐明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="老陈秀的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/02/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-02T15:43:40+08:00">
-                2020-04-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/04/02/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/02/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1601,7 +1826,7 @@
               
                 <a href="/archives/%7C%7C%E6%96%87%E7%AB%A0">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1614,7 +1839,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1979,7 +2204,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("浅谈MongoDB的复制");titles.push("5 用户权限与群组管理");titles.push("4 CentOS下安装PaddlePaddle依赖库");titles.push("3 Linux的文件系统");titles.push("2 Linux终端与命令行");titles.push("1 学会Linux的基本安装与配置");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("阿里巴巴高级技术专家章剑锋：大数据发展的 8 个要点");titles.push("Mac OS安装homebrew");titles.push("5 用户权限与群组管理");titles.push("4 CentOS下安装PaddlePaddle依赖库");titles.push("3 Linux的文件系统");titles.push("2 Linux终端与命令行");titles.push("机器学习概览");titles.push("1 学会Linux的基本安装与配置");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
